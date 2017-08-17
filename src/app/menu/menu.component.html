@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" *ngIf="!navbarService.hidden">
   <div class="col-xs-12">
     <ul class="nav nav-pills">
       <li routerLinkActive="active"> <a [routerLink]="['/home']">Home</a></li>
@@ -7,5 +7,6 @@
       <li routerLinkActive="active"> <a [routerLink]="['/currency']">Currency Rates</a></li>
       <li routerLinkActive="active"> <a [routerLink]="['/login']">Logout</a></li>
     </ul>
+    <hr>
   </div>
 </div>
