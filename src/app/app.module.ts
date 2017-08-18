@@ -24,7 +24,8 @@ import { AuthGuard } from './_guards/auth.guard';
 import { AuthenticationService } from './_services/authentication.service';
 import { UserService } from './_services/user.service';
 import { NavbarService } from './_services/navbar.service';
-
+import { PublicDealsComponent } from './public-deals/public-deals.component';
+import { PrivateDealsComponent } from './private-deals/private-deals.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,9 @@ import { NavbarService } from './_services/navbar.service';
     MenuComponent,
     WeatherComponent,
     CurrencyComponent,
-    MovieComponent
+    MovieComponent,
+    PublicDealsComponent,
+    PrivateDealsComponent
   ],
   imports: [
     BrowserModule,
