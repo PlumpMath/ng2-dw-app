@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AuthenticationService } from '../_services/authentication.service';
+import { AuthService } from '../_services/auth.service';
 import { NavbarService } from '../_services/navbar.service';
-
 
 @Component({
   moduleId: module.id,
@@ -17,18 +16,18 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private authenticationService: AuthenticationService,
+    private authService: AuthService,
     private navbarService: NavbarService) { }
 
   ngOnInit() {
     this.navbarService.hide();
     // reset login status
-    this.authenticationService.logout();
+    this.authService.logout();
   }
 
   login() {
     this.loading = true;
-    this.authenticationService.login(this.model.username, this.model.password)
+    this.authService.login(this.model.username, this.model.password)
       .subscribe(result => {
         if (result === true) {
           // login successful

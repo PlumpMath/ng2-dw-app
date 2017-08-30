@@ -4,19 +4,19 @@ import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 
-import { AuthenticationService } from './authentication.service';
+import { AuthService } from './auth.service';
 import { User } from '../_models/user';
 
 @Injectable()
 export class UserService {
     constructor(
         private http: Http,
-        private authenticationService: AuthenticationService) {
+        private authService: AuthService) {
     }
 
     getUsers(): Observable<User[]> {
         // add authorization header with jwt token
-        const headers = new Headers({ 'Authorization': 'Bearer ' + this.authenticationService.token });
+        const headers = new Headers({ 'Authorization': 'Bearer ' + this.authService.token });
         const options = new RequestOptions({ headers: headers });
 
         // get users from api

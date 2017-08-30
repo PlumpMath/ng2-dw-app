@@ -21,9 +21,10 @@ import { MovieComponent } from './movie/movie.component';
 
 import { SharedService } from './_services/shared.service';
 import { AuthGuard } from './_guards/auth.guard';
-import { AuthenticationService } from './_services/authentication.service';
+import { AuthService } from './_services/auth.service';
 import { UserService } from './_services/user.service';
 import { NavbarService } from './_services/navbar.service';
+import { DealService } from './_services/deal.service';
 import { PublicDealsComponent } from './public-deals/public-deals.component';
 import { PrivateDealsComponent } from './private-deals/private-deals.component';
 
@@ -47,10 +48,11 @@ import { PrivateDealsComponent } from './private-deals/private-deals.component';
   ],
   providers: [
     AuthGuard,
-    AuthenticationService,
+    AuthService,
     UserService,
     SharedService,
     NavbarService,
+    DealService,
     // providers used to create fake backend
     fakeBackendProvider,
     MockBackend,

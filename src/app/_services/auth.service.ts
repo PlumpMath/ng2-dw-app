@@ -5,7 +5,8 @@ import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class AuthenticationService {
+export class AuthService {
+  public loggedIn: boolean;
   public token: string;
 
   constructor(private http: Http) {
@@ -25,7 +26,6 @@ export class AuthenticationService {
 
           // store username and jwt token in local storage to keep user logged in between page refreshes
           localStorage.setItem('currentUser', JSON.stringify({ username: username, token: token }));
-
           // return true to indicate successful login
           return true;
         } else {
